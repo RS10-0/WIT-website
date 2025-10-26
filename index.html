@@ -25,13 +25,13 @@
     .top-banner {
       width: 100%;
       background-color: #d9e5f1; /* light blue */
-      padding: 4rem 0; /* taller banner */
+      padding: 4rem 0;
       text-align: center;
       border-bottom: 1px solid #ccc;
     }
 
     .top-banner h1 {
-      font-size: 5rem; /* bigger main text */
+      font-size: 5rem;
       font-weight: 900;
       color: #000;
       margin: 0;
@@ -40,7 +40,7 @@
     .top-banner .catchphrase {
       font-size: 1.5rem;
       margin-top: 0.5rem;
-      color: #2f4a6d; /* accent color */
+      color: #2f4a6d;
       font-weight: 500;
     }
 
@@ -80,7 +80,7 @@
     .hero {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* left align content */
+      align-items: flex-start;
       justify-content: center;
       text-align: left;
       height: 80vh;
@@ -118,57 +118,26 @@
       background-color: #1f334c;
     }
 
-    /* Content Sections */
-    .content {
-      text-align: center;
-      padding: 5rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .content h1 {
+    /* What We Do inside Home Section */
+    .what-we-do {
+      margin-top: 4rem;
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+    }
+
+    .what-we-do h1 {
+      font-size: 3.5rem;
       margin-bottom: 1rem;
-      color: #1a1a1a;
+      font-weight: 700;
+      color: #1c1c1c;
     }
 
-    .content p {
-      font-size: 1.1rem;
+    .what-we-do p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
       color: #333;
+      max-width: 700px;
     }
 
-    /* Contact Info */
-    .contact-list {
-      list-style: none;
-      margin-top: 2rem;
-      text-align: left;
-      display: inline-block;
-    }
-
-    .contact-list li {
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
-    }
-
-    /* Images */
-    .image-container {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .image-container img {
-      width: 450px;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    /* Activities Icons Section */
     .activities-icons {
       display: flex;
       flex-wrap: wrap;
@@ -188,6 +157,43 @@
     .activity .icon {
       font-size: 3rem;
       margin-bottom: 0.5rem;
+    }
+
+    /* Other Content Sections */
+    .content {
+      text-align: center;
+      padding: 5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    /* Images */
+    .image-container {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .image-container img {
+      width: 450px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     /* Footer */
@@ -221,7 +227,6 @@
     <nav>
       <ul>
         <li><a href="#" data-target="home" class="active-link">Home</a></li>
-        <li><a href="#" data-target="what-we-do">What We Do</a></li>
         <li><a href="#" data-target="about-us">About Us</a></li>
         <li><a href="#" data-target="resources">Resources</a></li>
         <li><a href="#" data-target="activities">Activities</a></li>
@@ -229,7 +234,7 @@
     </nav>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Home Section -->
   <section id="home" class="hero active">
     <h1>Our Mission</h1>
     <p>
@@ -238,36 +243,34 @@
       hands-on projects, we aim to inspire curiosity, confidence, and innovation
       in the next generation of tech leaders.
     </p>
-    <a href="#" class="cta-button" data-target="what-we-do">Get Involved</a>
-  </section>
 
-  <!-- What We Do Section -->
-  <section id="what-we-do" class="content">
-    <h1>What We Do</h1>
-    <p>
-      From coding workshops and robotics projects to guest speaker panels and mentorship opportunities,
-      Women in Tech provides hands-on experiences that spark curiosity and build real skills.
-      Members collaborate, learn, and grow together while exploring a wide range of STEM fields.
-    </p>
-    <div class="activities-icons">
-      <div class="activity">
-        <span class="icon">🖥</span>
-        <p>Coding Workshops</p>
-      </div>
-      <div class="activity">
-        <span class="icon">🤖</span>
-        <p>Robotics & Projects</p>
-      </div>
-      <div class="activity">
-        <span class="icon">🎤</span>
-        <p>Guest Speakers</p>
-      </div>
-      <div class="activity">
-        <span class="icon">💡</span>
-        <p>Mentorship</p>
+    <!-- What We Do inside Home -->
+    <div class="what-we-do">
+      <h1>What We Do</h1>
+      <p>
+        From coding workshops and robotics projects to guest speaker panels and mentorship opportunities,
+        Women in Tech provides hands-on experiences that spark curiosity and build real skills.
+        Members collaborate, learn, and grow together while exploring a wide range of STEM fields.
+      </p>
+      <div class="activities-icons">
+        <div class="activity">
+          <span class="icon">🖥</span>
+          <p>Coding Workshops</p>
+        </div>
+        <div class="activity">
+          <span class="icon">🤖</span>
+          <p>Robotics & Projects</p>
+        </div>
+        <div class="activity">
+          <span class="icon">🎤</span>
+          <p>Guest Speakers</p>
+        </div>
+        <div class="activity">
+          <span class="icon">💡</span>
+          <p>Mentorship</p>
+        </div>
       </div>
     </div>
-    <a href="#" class="cta-button" data-target="activities">Learn More</a>
   </section>
 
   <!-- About Us Section -->
@@ -313,7 +316,7 @@
 
   <!-- JS for section switching -->
   <script>
-    const links = document.querySelectorAll('.menu-banner nav ul li a, .cta-button');
+    const links = document.querySelectorAll('.menu-banner nav ul li a');
     const sections = document.querySelectorAll('section');
 
     links.forEach(link => {
@@ -321,18 +324,12 @@
         e.preventDefault();
         const targetId = link.dataset.target;
 
-        // Hide all sections
         sections.forEach(sec => sec.classList.remove('active'));
-
-        // Show target section
         const targetSection = document.getElementById(targetId);
         if(targetSection) targetSection.classList.add('active');
 
-        // Update active link in navbar
-        document.querySelectorAll('.menu-banner nav ul li a').forEach(l => l.classList.remove('active-link'));
-        if(link.tagName === 'A' && link.closest('nav')) {
-          link.classList.add('active-link');
-        }
+        links.forEach(l => l.classList.remove('active-link'));
+        link.classList.add('active-link');
       });
     });
   </script>
