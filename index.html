@@ -6,20 +6,27 @@
   <title>Women in Tech</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Top Banner (now light blue) */
+    /* Top Banner (enhanced) */
     .top-banner {
       width: 100%;
-      background-color: #d9e5f1;
-      padding: 3rem 0;
+      background-color: #d9e5f1; /* light blue */
+      padding: 4rem 0; /* taller banner */
       text-align: center;
       border-bottom: 1px solid #ccc;
     }
 
-    .top-banner h2 {
-      font-size: 4rem;
+    .top-banner h1 {
+      font-size: 5rem; /* bigger main text */
       font-weight: 900;
       color: #000;
       margin: 0;
+    }
+
+    .top-banner .catchphrase {
+      font-size: 1.5rem; /* smaller than main heading */
+      margin-top: 0.5rem;
+      color: #2f4a6d; /* accent color */
+      font-weight: 500;
     }
 
     /* Menu Banner */
@@ -54,18 +61,18 @@
       font-weight: 800;
     }
 
-    /* Hero section - LEFT aligned now */
+    /* Hero section - LEFT aligned */
     .hero {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* left-align items */
+      align-items: flex-start;
       justify-content: center;
-      text-align: left; /* text aligned left */
+      text-align: left;
       height: 80vh;
       background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
                   url('images/hero-bg.jpg') center/cover no-repeat;
       color: #1c1c1c;
-      padding: 0 8rem; /* extra side padding for better spacing */
+      padding: 0 8rem;
       max-width: 800px;
     }
 
@@ -169,7 +176,8 @@
 
   <!-- Top Banner -->
   <div class="top-banner">
-    <h2>Welcome to Women in Tech!</h2>
+    <h1>Women in Tech</h1>
+    <p class="catchphrase">Empowering women and allies in STEM to learn, create, and connect</p>
   </div>
 
   <!-- Menu Banner -->
@@ -184,7 +192,7 @@
     </nav>
   </div>
 
-  <!-- Hero Section (now left-aligned) -->
+  <!-- Hero Section -->
   <section id="home" class="hero active">
     <h1>Nurturing STEM Talents</h1>
     <p>
