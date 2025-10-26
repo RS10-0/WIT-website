@@ -168,6 +168,28 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
+    /* Activities Icons Section */
+    .activities-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .activity {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 150px;
+    }
+
+    .activity .icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -218,6 +240,35 @@
     <a href="#" class="cta-button" data-target="activities">Get Involved</a>
   </section>
 
+  <!-- What We Do Section -->
+  <section id="what-we-do" class="content">
+    <h1>What We Do</h1>
+    <p>
+      From coding workshops and robotics projects to guest speaker panels and mentorship opportunities,
+      Women in Tech provides hands-on experiences that spark curiosity and build real skills.
+      Members collaborate, learn, and grow together while exploring a wide range of STEM fields.
+    </p>
+    <div class="activities-icons">
+      <div class="activity">
+        <span class="icon">🖥</span>
+        <p>Coding Workshops</p>
+      </div>
+      <div class="activity">
+        <span class="icon">🤖</span>
+        <p>Robotics & Projects</p>
+      </div>
+      <div class="activity">
+        <span class="icon">🎤</span>
+        <p>Guest Speakers</p>
+      </div>
+      <div class="activity">
+        <span class="icon">💡</span>
+        <p>Mentorship</p>
+      </div>
+    </div>
+    <a href="#activities" class="cta-button">Learn More</a>
+  </section>
+
   <!-- About Us Section -->
   <section id="about-us" class="content">
     <h1>About Us</h1>
@@ -262,25 +313,4 @@
   <!-- JS for section switching -->
   <script>
     const links = document.querySelectorAll('.menu-banner nav ul li a, .cta-button');
-    const sections = document.querySelectorAll('section');
-
-    links.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('data-target');
-
-        sections.forEach(section => section.classList.remove('active'));
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) targetSection.classList.add('active');
-
-        links.forEach(l => l.classList.remove('active-link'));
-        link.classList.add('active-link');
-      });
-    });
-
-    // Show home section by default
-    document.getElementById('home').classList.add('active');
-  </script>
-
-</body>
-</html>
+    const sections
