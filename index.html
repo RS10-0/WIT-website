@@ -6,7 +6,22 @@
   <title>Women in Tech</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Top Banner (enhanced) */
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #d9e5f1;
+      color: #1c1c1c;
+      line-height: 1.6;
+    }
+
+    /* Top Banner */
     .top-banner {
       width: 100%;
       background-color: #d9e5f1; /* light blue */
@@ -23,13 +38,13 @@
     }
 
     .top-banner .catchphrase {
-      font-size: 1.5rem; /* smaller than main heading */
+      font-size: 1.5rem;
       margin-top: 0.5rem;
       color: #2f4a6d; /* accent color */
       font-weight: 500;
     }
 
-    /* Menu Banner */
+    /* Navbar */
     .menu-banner {
       width: 100%;
       background-color: #fff;
@@ -61,11 +76,11 @@
       font-weight: 800;
     }
 
-    /* Hero section - LEFT aligned */
+    /* Hero Section - Left Aligned */
     .hero {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-start; /* left align content */
       justify-content: center;
       text-align: left;
       height: 80vh;
@@ -91,20 +106,19 @@
 
     .cta-button {
       background-color: #2f4a6d;
-      padding: 1rem 2.5rem;
-      font-size: 1.2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
       color: #fff;
-      transition: background 0.3s ease;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
     }
 
     .cta-button:hover {
       background-color: #1f334c;
     }
 
-    /* Content sections */
+    /* Content Sections */
     .content {
       text-align: center;
       padding: 5rem 2rem;
@@ -124,7 +138,7 @@
       color: #333;
     }
 
-    /* Contact info */
+    /* Contact Info */
     .contact-list {
       list-style: none;
       margin-top: 2rem;
@@ -194,10 +208,12 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero active">
-    <h1>Nurturing STEM Talents</h1>
+    <h1>Our Mission</h1>
     <p>
-      Join us in bridging the gender gap in technology by empowering young women
-      through education and skill-building workshops.
+      Women in Tech empowers young women and allies to explore STEM, build skills,
+      and connect with a supportive community. Through workshops, mentorship, and
+      hands-on projects, we aim to inspire curiosity, confidence, and innovation
+      in the next generation of tech leaders.
     </p>
     <a href="#" class="cta-button" data-target="activities">Get Involved</a>
   </section>
