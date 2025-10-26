@@ -6,13 +6,14 @@
   <title>Women in Tech</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Sticky transparent navbar over hero */
+    /* Sticky navbar with light blue theme */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(217, 229, 241, 0.95); /* light blue with slight transparency */
       padding: 1rem 5%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .navbar {
@@ -27,7 +28,7 @@
       gap: 0.5rem;
       font-weight: 600;
       font-size: 1.2rem;
-      color: #fff;
+      color: #1c1c1c;
       text-decoration: none;
     }
 
@@ -44,14 +45,14 @@
 
     nav ul li a {
       text-decoration: none;
-      color: #fff;
+      color: #1c1c1c;
       font-weight: 500;
       transition: color 0.3s ease;
     }
 
     nav ul li a:hover,
     nav ul li a.active-link {
-      color: #ff6b6b;
+      color: #2f4a6d; /* darker blue highlight */
       font-weight: bold;
     }
 
@@ -64,15 +65,15 @@
       display: block;
     }
 
-    /* Hero section */
+    /* Hero section with light blue overlay */
     .hero {
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/hero-bg.jpg') center/cover no-repeat;
-      color: #fff;
+      background: linear-gradient(rgba(217,229,241,0.6), rgba(217,229,241,0.6)), url('../images/hero-bg.jpg') center/cover no-repeat;
+      color: #1c1c1c;
       padding: 0 2rem;
     }
 
@@ -92,7 +93,7 @@
     }
 
     .cta-button {
-      background-color: #ff6b6b;
+      background-color: #2f4a6d; /* darker blue CTA button */
       padding: 1rem 2.5rem;
       font-size: 1.2rem;
       border-radius: 50px;
@@ -103,149 +104,4 @@
     }
 
     .cta-button:hover {
-      background-color: #e55a5a;
-    }
-
-    /* Content sections */
-    .content {
-      text-align: center;
-      padding: 5rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #1a1a1a;
-    }
-
-    .content p {
-      font-size: 1.1rem;
-      color: #333;
-    }
-
-    /* Contact info */
-    .contact-list {
-      list-style: none;
-      margin-top: 2rem;
-      text-align: left;
-      display: inline-block;
-    }
-
-    .contact-list li {
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
-    }
-
-    /* Images */
-    .image-container {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .image-container img {
-      width: 450px;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #444;
-    }
-  </style>
-</head>
-<body>
-
-<!-- Navbar -->
-<header>
-  <div class="navbar">
-    <a href="#" class="logo" data-target="home">
-      <img src="images/logo.png" alt="Logo"> Women in Tech
-    </a>
-    <nav>
-      <ul>
-        <li><a href="#" data-target="home" class="active-link">Home</a></li>
-        <li><a href="#" data-target="about">About</a></li>
-        <li><a href="#" data-target="workshops">Workshops</a></li>
-        <li><a href="#" data-target="contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- Sections -->
-<section id="home" class="hero active">
-  <h1>Nurturing STEM Talents</h1>
-  <p>Empowering young women to thrive in technology through workshops, mentorship, and education.</p>
-  <a href="#" class="cta-button" data-target="workshops">Get Involved</a>
-</section>
-
-<section id="about" class="content">
-  <h1>About Us</h1>
-  <p>Women in Tech is dedicated to empowering young women by providing access to educational resources, mentorship programs, and skill-building workshops in STEM fields.</p>
-</section>
-
-<section id="workshops" class="content">
-  <h1>Workshops</h1>
-  <p>Our workshops focus on coding, robotics, data science, and leadership training. Hands-on sessions led by industry professionals help participants gain real-world experience.</p>
-  <div class="image-container">
-    <img src="images/speaker.jpg" alt="Woman giving a tech presentation">
-    <img src="images/student.jpg" alt="Woman smiling at her laptop">
-  </div>
-</section>
-
-<section id="contact" class="content">
-  <h1>Contact Info</h1>
-  <p>Have questions or want to collaborate with us? Reach out anytime!</p>
-  <ul class="contact-list">
-    <li><strong>Email:</strong> info@womenintech.org</li>
-    <li><strong>Phone:</strong> (555) 123-4567</li>
-    <li><strong>Address:</strong> 123 Innovation Drive, San Francisco, CA</li>
-  </ul>
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Women in Tech. All rights reserved.</p>
-</footer>
-
-<!-- JS for show/hide sections + active link -->
-<script>
-const links = document.querySelectorAll('nav ul li a, .logo, .cta-button');
-const sections = document.querySelectorAll('section');
-
-links.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const targetId = link.getAttribute('data-target');
-
-    // Hide all sections
-    sections.forEach(section => section.classList.remove('active'));
-
-    // Show target section
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) targetSection.classList.add('active');
-
-    // Update active link highlighting
-    links.forEach(l => l.classList.remove('active-link'));
-    if(link.tagName === 'A') link.classList.add('active-link');
-  });
-});
-
-// Initialize: show home section
-document.getElementById('home').classList.add('active');
-</script>
-
-</body>
-</html>
+      background-co
