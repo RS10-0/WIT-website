@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women in Tech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Hide all sections initially except home */
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+  <div class="navbar">
+    <a href="#" class="logo" data-target="home">
+      <img src="images/logo.png" alt="Logo"> Women in Tech
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#" data-target="home">Home</a></li>
+        <li><a href="#" data-target="about">About</a></li>
+        <li><a href="#" data-target="workshops">Workshops</a></li>
+        <li><a href="#" data-target="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Sections -->
+<section id="home" class="hero active">
+  <h1>Nurturing STEM Talents</h1>
+  <p>Join us in bridging the gender gap in technology by empowering young women through education and skill-building workshops.</p>
+  <a href="#" class="cta-button" data-target="workshops">Get Involved</a>
+</section>
+
+<section id="about" class="content">
+  <h1>About Us</h1>
+  <p>Women in Tech is dedicated to empowering young women by providing access to educational resources, mentorship programs, and skill-building workshops in STEM fields.</p>
+</section>
+
+<section id="workshops" class="content">
+  <h1>Workshops</h1>
+  <p>Our workshops focus on coding, robotics, data science, and leadership training. Hands-on sessions led by industry professionals help participants gain real-world experience.</p>
+  <div class="image-container">
+    <img src="images/speaker.jpg" alt="Woman giving a tech presentation">
+    <img src="images/student.jpg" alt="Woman smiling at her laptop">
+  </div>
+</section>
+
+<section id="contact" class="content">
+  <h1>Contact Info</h1>
+  <p>Have questions or want to collaborate with us? Reach out anytime!</p>
+  <ul class="contact-list">
+    <li><strong>Email:</strong> info@womenintech.org</li>
+    <li><strong>Phone:</strong> (555) 123-4567</li>
+    <li><strong>Address:</strong> 123 Innovation Drive, San Francisco, CA</li>
+  </ul>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Women in Tech. All rights reserved.</p>
+</footer>
+
+<!-- JavaScript for show/hide sections -->
+<script>
+  const links = document.querySelectorAll('nav ul li a, .logo, .cta-button');
+  const sections = document.querySelectorAll('section');
+
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+
+      sections.forEach(section => {
+        section.classList.remove('active'); // hide all
+      });
+
+      const targetSection = document.getElementById(targetId);
+      if(targetSection) targetSection.classList.add('active'); // show target
+    });
+  });
+
+  // Initialize: show home section
+  document.getElementById('home').classList.add('active');
+</script>
+
+</body>
+</html>
