@@ -22,36 +22,37 @@
   margin: 0;
 }
 
-    /* Menu Banner (centered navbar in a small horizontal banner) */
-    .menu-banner {
-      width: 100%;
-      background-color: #d9e5f1; /* light blue */
-      padding: 1rem 0;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
-    }
+   /* Menu Banner (centered navbar in a small horizontal banner) */
+.menu-banner {
+  width: 100%;
+  background-color: #d9e5f1; /* light blue */
+  padding: 1.5rem 0; /* increase vertical height */
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow for depth */
+}
 
-    .menu-banner nav ul {
-      display: inline-flex;
-      list-style: none;
-      gap: 3rem;
-      padding: 0;
-      margin: 0;
-    }
+.menu-banner nav ul {
+  display: inline-flex;
+  list-style: none;
+  gap: 4rem; /* increase spacing between links */
+  padding: 0;
+  margin: 0;
+}
 
-    .menu-banner nav ul li a {
-      text-decoration: none;
-      color: #1c1c1c;
-      font-weight: 600;
-      font-size: 1.2rem;
-      transition: color 0.3s ease;
-    }
+.menu-banner nav ul li a {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 700; /* bolder text */
+  font-size: 1.5rem; /* bigger font size */
+  transition: color 0.3s ease;
+}
 
-    .menu-banner nav ul li a:hover,
-    .menu-banner nav ul li a.active-link {
-      color: #2f4a6d;
-      font-weight: bold;
-    }
+.menu-banner nav ul li a:hover,
+.menu-banner nav ul li a.active-link {
+  color: #2f4a6d;
+  font-weight: 800; /* slightly bolder on hover */
+}
 
     /* Sticky Navbar (menu banner stays at top when scrolling) */
     header {
