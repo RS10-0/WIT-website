@@ -9,7 +9,7 @@
     /* Top Banner (now light blue) */
     .top-banner {
       width: 100%;
-      background-color: #d9e5f1; /* light blue */
+      background-color: #d9e5f1;
       padding: 3rem 0;
       text-align: center;
       border-bottom: 1px solid #ccc;
@@ -22,7 +22,7 @@
       margin: 0;
     }
 
-    /* Menu Banner (now white) */
+    /* Menu Banner */
     .menu-banner {
       width: 100%;
       background-color: #fff;
@@ -54,18 +54,19 @@
       font-weight: 800;
     }
 
-    /* Hero section */
+    /* Hero section - LEFT aligned now */
     .hero {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start; /* left-align items */
       justify-content: center;
-      text-align: center;
+      text-align: left; /* text aligned left */
       height: 80vh;
       background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
                   url('images/hero-bg.jpg') center/cover no-repeat;
       color: #1c1c1c;
-      padding: 0 2rem;
+      padding: 0 8rem; /* extra side padding for better spacing */
+      max-width: 800px;
     }
 
     .hero h1 {
@@ -183,7 +184,7 @@
     </nav>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (now left-aligned) -->
   <section id="home" class="hero active">
     <h1>Nurturing STEM Talents</h1>
     <p>
