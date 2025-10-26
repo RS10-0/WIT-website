@@ -10,84 +10,68 @@
     .top-banner {
       width: 100%;
       background-color: #fff; /* white banner */
-      padding: 1rem 0;
+      padding: 2rem 0;
       text-align: center;
       border-bottom: 1px solid #ccc;
     }
 
     .top-banner h2 {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 3rem; /* bigger font */
+      font-weight: 800;
       color: #000; /* black letters */
       margin: 0;
     }
 
-    /* Sticky navbar */
+    /* Menu Banner (centered navbar in a small horizontal banner) */
+    .menu-banner {
+      width: 100%;
+      background-color: #d9e5f1; /* light blue */
+      padding: 1rem 0;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .menu-banner nav ul {
+      display: inline-flex;
+      list-style: none;
+      gap: 3rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-banner nav ul li a {
+      text-decoration: none;
+      color: #1c1c1c;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .menu-banner nav ul li a:hover,
+    .menu-banner nav ul li a.active-link {
+      color: #2f4a6d;
+      font-weight: bold;
+    }
+
+    /* Sticky Navbar (menu banner stays at top when scrolling) */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: rgba(217, 229, 241, 0.95); /* light blue */
+      background-color: rgba(217, 229, 241, 0.95);
       padding: 1rem 5%;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-      font-size: 1.2rem;
-      color: #1c1c1c;
-      text-decoration: none;
-    }
-
-    .logo img {
-      width: 30px;
-      height: 30px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #1c1c1c;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active-link {
-      color: #2f4a6d; /* highlight color */
-      font-weight: bold;
-    }
-
-    /* Hide all sections except active */
-    section {
-      display: none;
-    }
-
-    section.active {
-      display: block;
+      display: none; /* hidden, we use menu-banner instead */
     }
 
     /* Hero section */
     .hero {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      height: 100vh;
+      height: 80vh;
       background: linear-gradient(rgba(217,229,241,0.6), rgba(217,229,241,0.6)), url('images/hero-bg.jpg') center/cover no-repeat;
       color: #1c1c1c;
       padding: 0 2rem;
@@ -104,12 +88,10 @@
       font-size: 1.5rem;
       margin-bottom: 2rem;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .cta-button {
-      background-color: #2f4a6d; /* dark blue CTA */
+      background-color: #2f4a6d;
       padding: 1rem 2.5rem;
       font-size: 1.2rem;
       border-radius: 50px;
@@ -180,6 +162,16 @@
       font-size: 0.9rem;
       color: #444;
     }
+
+    /* Hide all sections except active */
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
   </style>
 </head>
 <body>
@@ -189,22 +181,17 @@
   <h2>Welcome to Women in Tech!</h2>
 </div>
 
-<!-- Navbar -->
-<header>
-  <div class="navbar">
-    <a href="#" class="logo" data-target="home">
-      <img src="images/logo.png" alt="Logo"> Women in Tech
-    </a>
-    <nav>
-      <ul>
-        <li><a href="#" data-target="home" class="active-link">Home</a></li>
-        <li><a href="#" data-target="about">About</a></li>
-        <li><a href="#" data-target="workshops">Workshops</a></li>
-        <li><a href="#" data-target="contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<!-- Menu Banner with navbar centered -->
+<div class="menu-banner">
+  <nav>
+    <ul>
+      <li><a href="#" data-target="home" class="active-link">Home</a></li>
+      <li><a href="#" data-target="about">About</a></li>
+      <li><a href="#" data-target="workshops">Workshops</a></li>
+      <li><a href="#" data-target="contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
 
 <!-- Hero Section -->
 <section id="home" class="hero active">
@@ -247,7 +234,7 @@
 
 <!-- JS for section switching -->
 <script>
-const links = document.querySelectorAll('nav ul li a, .logo, .cta-button');
+const links = document.querySelectorAll('.menu-banner nav ul li a, .cta-button');
 const sections = document.querySelectorAll('section');
 
 links.forEach(link => {
@@ -258,7 +245,7 @@ links.forEach(link => {
     const targetSection = document.getElementById(targetId);
     if (targetSection) targetSection.classList.add('active');
     links.forEach(l => l.classList.remove('active-link'));
-    if(link.tagName === 'A') link.classList.add('active-link');
+    link.classList.add('active-link');
   });
 });
 
