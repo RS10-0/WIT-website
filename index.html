@@ -6,12 +6,20 @@
   <title>Women in Tech</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Hide all sections initially except home */
+    /* Sections initially hidden */
     section {
-      display: none;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: opacity 0.5s ease-in-out;
     }
     section.active {
-      display: block;
+      opacity: 1;
+      pointer-events: auto;
+      position: relative;
     }
   </style>
 </head>
@@ -70,7 +78,7 @@
   <p>&copy; 2025 Women in Tech. All rights reserved.</p>
 </footer>
 
-<!-- JavaScript for show/hide sections -->
+<!-- JavaScript for show/hide with fade -->
 <script>
   const links = document.querySelectorAll('nav ul li a, .logo, .cta-button');
   const sections = document.querySelectorAll('section');
@@ -80,12 +88,8 @@
       e.preventDefault();
       const targetId = link.getAttribute('data-target');
 
-      sections.forEach(section => {
-        section.classList.remove('active'); // hide all
-      });
-
-      const targetSection = document.getElementById(targetId);
-      if(targetSection) targetSection.classList.add('active'); // show target
+      sections.forEach(section => section.classList.remove('active')); // hide all
+      document.getElementById(targetId).classList.add('active'); // show target
     });
   });
 
