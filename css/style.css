@@ -1,286 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Women in Tech</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Reset default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Body */
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #d9e5f1;
-      color: #1c1c1c;
-      line-height: 1.6;
-    }
+/* Body */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #d9e5f1;
+  color: #1c1c1c;
+  line-height: 1.6;
+}
 
-    /* Top Banner */
-    .top-banner {
-      width: 100%;
-      background-color: #d9e5f1; /* light blue */
-      padding: 4rem 0; /* taller banner */
-      text-align: center;
-      border-bottom: 1px solid #ccc;
-    }
+/* Top Banner */
+.top-banner {
+  width: 100%;
+  background-color: #d9e5f1; /* light blue */
+  padding: 4rem 0; /* taller banner */
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
 
-    .top-banner h1 {
-      font-size: 5rem; /* bigger main text */
-      font-weight: 900;
-      color: #000;
-      margin: 0;
-    }
+.top-banner h1 {
+  font-size: 5rem; /* bigger main text */
+  font-weight: 900;
+  color: #000;
+  margin: 0;
+}
 
-    .top-banner .catchphrase {
-      font-size: 1.5rem;
-      margin-top: 0.5rem;
-      color: #2f4a6d; /* accent color */
-      font-weight: 500;
-    }
+.top-banner .catchphrase {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: #2f4a6d; /* accent color */
+  font-weight: 500;
+}
 
-    /* Navbar */
-    .menu-banner {
-      width: 100%;
-      background-color: #fff;
-      padding: 1.5rem 0;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
+/* Navbar */
+.menu-banner {
+  width: 100%;
+  background-color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 
-    .menu-banner nav ul {
-      display: inline-flex;
-      list-style: none;
-      gap: 4rem;
-      padding: 0;
-      margin: 0;
-    }
+.menu-banner nav ul {
+  display: inline-flex;
+  list-style: none;
+  gap: 4rem;
+  padding: 0;
+  margin: 0;
+}
 
-    .menu-banner nav ul li a {
-      text-decoration: none;
-      color: #1c1c1c;
-      font-weight: 700;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
+.menu-banner nav ul li a {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
 
-    .menu-banner nav ul li a:hover,
-    .menu-banner nav ul li a.active-link {
-      color: #2f4a6d;
-      font-weight: 800;
-    }
+.menu-banner nav ul li a:hover,
+.menu-banner nav ul li a.active-link {
+  color: #2f4a6d;
+  font-weight: 800;
+}
 
-    /* Hero Section - Left Aligned */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* left align content */
-      justify-content: center;
-      text-align: left;
-      height: 80vh;
-      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
-                  url('images/hero-bg.jpg') center/cover no-repeat;
-      color: #1c1c1c;
-      padding: 0 8rem;
-      max-width: 800px;
-    }
+/* Hero Section - Left Aligned */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align content */
+  justify-content: center;
+  text-align: left;
+  height: 80vh;
+  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+              url('../images/hero-bg.jpg') center/cover no-repeat;
+  color: #1c1c1c;
+  padding: 0 8rem;
+  max-width: 800px;
+}
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
 
-    .hero p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      max-width: 600px;
-    }
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
 
-    .cta-button {
-      background-color: #2f4a6d;
-      color: #fff;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
+.cta-button {
+  background-color: #2f4a6d;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
 
-    .cta-button:hover {
-      background-color: #1f334c;
-    }
+.cta-button:hover {
+  background-color: #1f334c;
+}
 
-    /* Content Sections */
-    .content {
-      text-align: center;
-      padding: 5rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+/* Content Sections */
+.content {
+  text-align: center;
+  padding: 5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    .content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #1a1a1a;
-    }
+.content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
 
-    .content p {
-      font-size: 1.1rem;
-      color: #333;
-    }
+.content p {
+  font-size: 1.1rem;
+  color: #333;
+}
 
-    /* Contact Info */
-    .contact-list {
-      list-style: none;
-      margin-top: 2rem;
-      text-align: left;
-      display: inline-block;
-    }
+/* Contact Info */
+.contact-list {
+  list-style: none;
+  margin-top: 2rem;
+  text-align: left;
+  display: inline-block;
+}
 
-    .contact-list li {
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
-    }
+.contact-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
 
-    /* Images */
-    .image-container {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-    }
+/* Images */
+.image-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
-    .image-container img {
-      width: 450px;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
+.image-container img {
+  width: 450px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #444;
-    }
+/* What We Do / Activities Icons */
+.activities-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
 
-    /* Hide all sections except active */
-    section {
-      display: none;
-    }
+.activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+}
 
-    section.active {
-      display: block;
-    }
-  </style>
-</head>
-<body>
+.activity .icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
 
-  <!-- Top Banner -->
-  <div class="top-banner">
-    <h1>Women in Tech</h1>
-    <p class="catchphrase">Empowering women and allies in STEM to learn, create, and connect</p>
-  </div>
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #444;
+}
 
-  <!-- Menu Banner -->
-  <div class="menu-banner">
-    <nav>
-      <ul>
-        <li><a href="#" data-target="home" class="active-link">Home</a></li>
-        <li><a href="#" data-target="about-us">About Us</a></li>
-        <li><a href="#" data-target="resources">Resources</a></li>
-        <li><a href="#" data-target="activities">Activities</a></li>
-      </ul>
-    </nav>
-  </div>
+/* Hide all sections except active */
+section {
+  display: none;
+}
 
-  <!-- Hero Section -->
-  <section id="home" class="hero active">
-    <h1>Our Mission</h1>
-    <p>
-      Women in Tech empowers young women and allies to explore STEM, build skills,
-      and connect with a supportive community. Through workshops, mentorship, and
-      hands-on projects, we aim to inspire curiosity, confidence, and innovation
-      in the next generation of tech leaders.
-    </p>
-    <a href="#" class="cta-button" data-target="activities">Get Involved</a>
-  </section>
-
-  <!-- About Us Section -->
-  <section id="about-us" class="content">
-    <h1>About Us</h1>
-    <p>
-      Women in Tech is dedicated to empowering young women by providing access to
-      educational resources, mentorship programs, and skill-building workshops in
-      STEM fields.
-    </p>
-  </section>
-
-  <!-- Resources Section -->
-  <section id="resources" class="content">
-    <h1>Resources</h1>
-    <p>
-      Explore our collection of learning materials, tutorials, and mentorship
-      guides designed to help women succeed in technology careers.
-    </p>
-    <div class="image-container">
-      <img src="images/resource1.jpg" alt="Team collaborating on tech project">
-      <img src="images/resource2.jpg" alt="Woman coding on laptop">
-    </div>
-  </section>
-
-  <!-- Activities Section -->
-  <section id="activities" class="content">
-    <h1>Activities</h1>
-    <p>
-      Participate in our community events, hackathons, and leadership activities
-      that encourage collaboration, innovation, and empowerment.
-    </p>
-    <div class="image-container">
-      <img src="images/speaker.jpg" alt="Woman giving a tech presentation">
-      <img src="images/student.jpg" alt="Woman smiling at her laptop">
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Women in Tech. All rights reserved.</p>
-  </footer>
-
-  <!-- JS for section switching -->
-  <script>
-    const links = document.querySelectorAll('.menu-banner nav ul li a, .cta-button');
-    const sections = document.querySelectorAll('section');
-
-    links.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('data-target');
-
-        sections.forEach(section => section.classList.remove('active'));
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) targetSection.classList.add('active');
-
-        links.forEach(l => l.classList.remove('active-link'));
-        link.classList.add('active-link');
-      });
-    });
-
-    // Show home section by default
-    document.getElementById('home').classList.add('active');
-  </script>
-
-</body>
-</html>
+section.active {
+  display: block;
+}
