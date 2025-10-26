@@ -221,6 +221,7 @@
     <nav>
       <ul>
         <li><a href="#" data-target="home" class="active-link">Home</a></li>
+        <li><a href="#" data-target="what-we-do">What We Do</a></li>
         <li><a href="#" data-target="about-us">About Us</a></li>
         <li><a href="#" data-target="resources">Resources</a></li>
         <li><a href="#" data-target="activities">Activities</a></li>
@@ -237,7 +238,7 @@
       hands-on projects, we aim to inspire curiosity, confidence, and innovation
       in the next generation of tech leaders.
     </p>
-    <a href="#" class="cta-button" data-target="activities">Get Involved</a>
+    <a href="#" class="cta-button" data-target="what-we-do">Get Involved</a>
   </section>
 
   <!-- What We Do Section -->
@@ -266,7 +267,7 @@
         <p>Mentorship</p>
       </div>
     </div>
-    <a href="#activities" class="cta-button">Learn More</a>
+    <a href="#" class="cta-button" data-target="activities">Learn More</a>
   </section>
 
   <!-- About Us Section -->
@@ -313,4 +314,27 @@
   <!-- JS for section switching -->
   <script>
     const links = document.querySelectorAll('.menu-banner nav ul li a, .cta-button');
-    const sections
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.dataset.target;
+
+        // Hide all sections
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Show target section
+        const targetSection = document.getElementById(targetId);
+        if(targetSection) targetSection.classList.add('active');
+
+        // Update active link in navbar
+        document.querySelectorAll('.menu-banner nav ul li a').forEach(l => l.classList.remove('active-link'));
+        if(link.tagName === 'A' && link.closest('nav')) {
+          link.classList.add('active-link');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
