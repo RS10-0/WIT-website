@@ -6,7 +6,15 @@
   <title>Women in Tech</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Sections initially hidden */
+    /* Make navbar sticky */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #d9e5f1;
+    }
+
+    /* Sections fade effect */
     section {
       opacity: 0;
       pointer-events: none;
@@ -16,10 +24,17 @@
       width: 100%;
       transition: opacity 0.5s ease-in-out;
     }
+
     section.active {
       opacity: 1;
       pointer-events: auto;
       position: relative;
+    }
+
+    /* Active link highlight */
+    nav ul li a.active-link {
+      color: #2f4a6d;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -33,7 +48,7 @@
     </a>
     <nav>
       <ul>
-        <li><a href="#" data-target="home">Home</a></li>
+        <li><a href="#" data-target="home" class="active-link">Home</a></li>
         <li><a href="#" data-target="about">About</a></li>
         <li><a href="#" data-target="workshops">Workshops</a></li>
         <li><a href="#" data-target="contact">Contact</a></li>
@@ -78,23 +93,31 @@
   <p>&copy; 2025 Women in Tech. All rights reserved.</p>
 </footer>
 
-<!-- JavaScript for show/hide with fade -->
+<!-- JS for show/hide sections + active link -->
 <script>
-  const links = document.querySelectorAll('nav ul li a, .logo, .cta-button');
-  const sections = document.querySelectorAll('section');
+const links = document.querySelectorAll('nav ul li a, .logo, .cta-button');
+const sections = document.querySelectorAll('section');
 
-  links.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('data-target');
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('data-target');
 
-      sections.forEach(section => section.classList.remove('active')); // hide all
-      document.getElementById(targetId).classList.add('active'); // show target
-    });
+    // Hide all sections
+    sections.forEach(section => section.classList.remove('active'));
+
+    // Show target section
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) targetSection.classList.add('active');
+
+    // Update active link highlighting
+    links.forEach(l => l.classList.remove('active-link'));
+    if(link.tagName === 'A') link.classList.add('active-link');
   });
+});
 
-  // Initialize: show home section
-  document.getElementById('home').classList.add('active');
+// Initialize: show home section
+document.getElementById('home').classList.add('active');
 </script>
 
 </body>
