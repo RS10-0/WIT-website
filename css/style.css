@@ -1,5 +1,154 @@
-/* style.css - CSS for Women in Tech website */
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #d9e5f1;
+  font-family: 'Inter', sans-serif;
+  background-color: #d9e5f1;
+  color: #1c1c1c;
+  line-height: 1.6;
+}
+
+/* Navbar */
+header {
+  background-color: #d9e5f1;
+  padding: 1rem 5%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active-link {
+  color: #2f4a6d;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #333;
+}
+
+.cta-button {
+  background-color: #2f4a6d;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1f334c;
+}
+
+/* Content Sections */
+.content {
+  text-align: center;
+  padding: 5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Contact Info */
+.contact-list {
+  list-style: none;
+  margin-top: 2rem;
+  text-align: left;
+  display: inline-block;
+}
+
+.contact-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+/* Images */
+.image-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.image-container img {
+  width: 450px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #444;
 }
