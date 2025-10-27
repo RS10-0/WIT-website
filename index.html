@@ -1,41 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <script src="scripts/script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXT</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <script src="scripts/app.js" defer></script>
 </head>
 <body>
 
-<nav class="navbar">
+  <!-- Top Banner -->
+  <header class="top-banner">
+    <h1>NEXT</h1>
+    <p class="catchphrase">Innovate. Build. Connect.</p>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar">
     <div class="navbar__container">
-        <a href="/" id="navbar__logo">NEXT</a>
+      <a href="/" id="navbar__logo">NEXT</a>
 
-        <!-- Hamburger for mobile -->
-        <div class="navbar__toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+      <!-- Hamburger Menu for Mobile -->
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
 
-        <ul class="navbar__menu">
-            <li class="navbar__item">
-                <a href="/" class="navbar__links">Home</a>
-            </li>
-            <li class="navbar__item">
-                <a href="/tech.html" class="navbar__links">Tech</a>
-            </li>
-            <li class="navbar__item">
-                <a href="/" class="navbar__links">Products</a>
-            </li>
-            <li class="navbar__btn">
-                <a href="/" class="button">Sign Up</a>
-            </li>
-        </ul>
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="#" data-target="home" class="navbar__links active-link">Home</a></li>
+        <li class="navbar__item"><a href="#" data-target="tech" class="navbar__links">Tech</a></li>
+        <li class="navbar__item"><a href="#" data-target="products" class="navbar__links">Products</a></li>
+        <li class="navbar__btn"><a href="#" data-target="signup" class="button">Sign Up</a></li>
+      </ul>
     </div>
-</nav>
-<script src="scripts/app.js" defer></script>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="hero active">
+    <div class="hero__content">
+      <h1>Empowering the Future</h1>
+      <p>At NEXT, we drive innovation, creativity, and collaboration — building technology that inspires change.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="what-we-do">
+      <h2>What We Do</h2>
+      <p>From cutting-edge development to community-driven projects, NEXT helps ideas grow into impact.</p>
+      <div class="activities-icons">
+        <div class="activity">
+          <span class="icon">💻</span>
+          <p>Web Development</p>
+        </div>
+        <div class="activity">
+          <span class="icon">⚙️</span>
+          <p>Automation</p>
+        </div>
+        <div class="activity">
+          <span class="icon">🌐</span>
+          <p>Design & UX</p>
+        </div>
+        <div class="activity">
+          <span class="icon">🚀</span>
+          <p>Innovation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH SECTION -->
+  <section id="tech" class="content">
+    <h1>Our Technology</h1>
+    <p>We explore the latest in AI, machine learning, and sustainable design to build the tech of tomorrow.</p>
+    <div class="image-container">
+      <img src="images/tech1.jpg" alt="AI concept">
+      <img src="images/tech2.jpg" alt="Developers collaborating">
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section id="products" class="content">
+    <h1>Our Products</h1>
+    <p>From software solutions to educational tools, NEXT delivers high-quality products for real-world impact.</p>
+    <div class="image-container">
+      <img src="images/product1.jpg" alt="Product showcase">
+      <img src="images/product2.jpg" alt="Team building software">
+    </div>
+  </section>
+
+  <!-- SIGNUP SECTION -->
+  <section id="signup" class="content">
+    <h1>Join Us</h1>
+    <p>Be part of the NEXT movement — where technology meets creativity. Sign up to get involved!</p>
+    <a href="#" class="cta-button">Sign Up</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 NEXT. All rights reserved.</p>
+  </footer>
+
+  <!-- JS for section switching -->
+  <script>
+    const links = document.querySelectorAll('.navbar__menu .navbar__links, .navbar__btn .button');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.dataset.target;
+
+        // Hide all sections
+        sections.forEach(sec => sec.classList.remove('active'));
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) targetSection.classList.add('active');
+
+        // Update active link
+        links.forEach(l => l.classList.remove('active-link'));
+        link.classList.add('active-link');
+      });
+    });
+  </script>
+
 </body>
 </html>
