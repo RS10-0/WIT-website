@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WIT</title>
-  <!-- Correct CSS path -->
   <link rel="stylesheet" href="css/style.css">
   <script src="scripts/app.js" defer></script>
 </head>
@@ -64,8 +63,8 @@
     <h1>Our Technology</h1>
     <p>We explore the latest in AI, machine learning, and sustainable design to build the tech of tomorrow.</p>
     <div class="image-container">
-      <img src="images/tech1.jpg" alt="AI concept">
-      <img src="images/tech2.jpg" alt="Developers collaborating">
+      <img src="https://via.placeholder.com/400x250?text=AI+Concept" alt="AI concept">
+      <img src="https://via.placeholder.com/400x250?text=Developers+Collaborating" alt="Developers collaborating">
     </div>
   </section>
 
@@ -74,8 +73,8 @@
     <h1>Our Products</h1>
     <p>From software solutions to educational tools, WIT delivers high-quality products for real-world impact.</p>
     <div class="image-container">
-      <img src="images/product1.jpg" alt="Product showcase">
-      <img src="images/product2.jpg" alt="Team building software">
+      <img src="https://via.placeholder.com/400x250?text=Product+Showcase" alt="Product showcase">
+      <img src="https://via.placeholder.com/400x250?text=Team+Building+Software" alt="Team building software">
     </div>
   </section>
 
@@ -101,12 +100,10 @@
         e.preventDefault();
         const targetId = link.dataset.target;
 
-        // Hide all sections
         sections.forEach(sec => sec.classList.remove('active'));
         const targetSection = document.getElementById(targetId);
         if(targetSection) targetSection.classList.add('active');
 
-        // Update active link
         links.forEach(l => l.classList.remove('active-link'));
         link.classList.add('active-link');
       });
