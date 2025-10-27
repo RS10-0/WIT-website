@@ -1,161 +1,60 @@
 /* =========================
-   RESET + GLOBAL STYLES
+   TOP BANNER (Wix-style)
 ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #d9e5f1; /* light blue background */
-  color: #1c1c1c;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-.navbar {
-  background: #ffffff;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.navbar__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
+.top-banner {
   width: 100%;
-  max-width: 1300px;
-  padding: 0 50px;
-}
-
-#navbar__logo {
-  background: linear-gradient(90deg, #2f4a6d, #5a8cc4);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: 2rem;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-  letter-spacing: 1px;
-}
-
-/* Navbar Menu */
-.navbar__menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
+  background-color: #d9e5f1; /* light blue */
+  padding: 4rem 0;
   text-align: center;
-  gap: 2rem;
+  border-bottom: 1px solid #ccc;
 }
 
-.navbar__item {
-  height: 80px;
+.top-banner h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #000;
+  margin: 0;
 }
 
-.navbar__links {
-  color: #1c1c1c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  height: 100%;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.navbar__links:hover {
+.top-banner .catchphrase {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
   color: #2f4a6d;
-}
-
-/* Sign Up Button */
-.navbar__btn .button {
-  padding: 8px 20px;
-  background-color: #2f4a6d;
-  color: #fff;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.navbar__btn .button:hover {
-  background-color: #1f334c;
+  font-weight: 500;
 }
 
 /* =========================
-   MOBILE NAVBAR
+   MENU BANNER / NAVBAR
 ========================= */
-.navbar__toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 21px;
-  cursor: pointer;
-}
-
-.bar {
-  height: 3px;
+.menu-banner {
   width: 100%;
-  background-color: #333;
-  border-radius: 5px;
+  background-color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Mobile Menu Active */
-@media screen and (max-width: 960px) {
-  .navbar__menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: -1000px;
-    opacity: 0;
-    transition: all 0.5s ease;
-    background-color: #fff;
-    left: 0;
-    text-align: center;
-  }
+.menu-banner nav ul {
+  display: inline-flex;
+  list-style: none;
+  gap: 4rem;
+  padding: 0;
+  margin: 0;
+}
 
-  .navbar__menu.active {
-    top: 80px;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 99;
-  }
+.menu-banner nav ul li a {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
 
-  .navbar__toggle {
-    display: flex;
-  }
-
-  .navbar__item {
-    width: 100%;
-  }
-
-  .navbar__links {
-    padding: 2rem;
-    display: block;
-  }
-
-  .navbar__btn {
-    padding-bottom: 2rem;
-  }
+.menu-banner nav ul li a:hover,
+.menu-banner nav ul li a.active-link {
+  color: #2f4a6d;
+  font-weight: 800;
 }
 
 /* =========================
@@ -167,24 +66,26 @@ body {
   align-items: flex-start;
   justify-content: center;
   text-align: left;
-  height: 85vh;
-  padding: 0 8rem;
+  height: 80vh;
   background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
               url('../images/hero-bg.jpg') center/cover no-repeat;
   color: #1c1c1c;
+  padding: 0 8rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
-  font-weight: 800;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .hero p {
-  font-size: 1.3rem;
-  max-width: 600px;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
+  max-width: 600px;
 }
 
 .cta-button {
@@ -199,136 +100,4 @@ body {
 
 .cta-button:hover {
   background-color: #1f334c;
-}
-
-/* =========================
-   CONTENT SECTIONS
-========================= */
-.content {
-  text-align: center;
-  padding: 5rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #1a1a1a;
-}
-
-.content p {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.8;
-}
-
-/* =========================
-   WHAT WE DO / ICON SECTION
-========================= */
-.what-we-do {
-  margin-top: 4rem;
-  text-align: center;
-}
-
-.what-we-do h1 {
-  font-size: 3rem;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 1rem;
-  color: #1a1a1a;
-}
-
-.what-we-do p {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 2rem;
-}
-
-.activities-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.activity {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 150px;
-}
-
-.activity .icon {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-/* =========================
-   IMAGE SECTIONS
-========================= */
-.image-container {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.image-container img {
-  width: 400px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.image-container img:hover {
-  transform: scale(1.03);
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  background-color: #fff;
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #444;
-  border-top: 1px solid #ccc;
-  box-shadow: 0 -1px 6px rgba(0,0,0,0.05);
-}
-
-/* =========================
-   RESPONSIVENESS
-========================= */
-@media screen and (max-width: 768px) {
-  .hero {
-    padding: 0 2rem;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 2.8rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-  }
-
-  .content {
-    padding: 3rem 1.5rem;
-  }
-
-  .what-we-do h1 {
-    font-size: 2.5rem;
-  }
-
-  .image-container img {
-    width: 90%;
-  }
 }
