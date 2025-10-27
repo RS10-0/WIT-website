@@ -3,50 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+  <title>WIT</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="scripts/app.js" defer></script>
 </head>
 <body>
 
   <!-- Top Banner -->
-  <header class="top-banner">
-    <h1>NEXT</h1>
+  <div class="top-banner">
+    <h1>WIT</h1>
     <p class="catchphrase">Innovate. Build. Connect.</p>
-  </header>
+  </div>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar__container">
-      <a href="/" id="navbar__logo">NEXT</a>
-
-      <!-- Hamburger Menu for Mobile -->
-      <div class="navbar__toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-
-      <ul class="navbar__menu">
-        <li class="navbar__item"><a href="#" data-target="home" class="navbar__links active-link">Home</a></li>
-        <li class="navbar__item"><a href="#" data-target="tech" class="navbar__links">Tech</a></li>
-        <li class="navbar__item"><a href="#" data-target="products" class="navbar__links">Products</a></li>
-        <li class="navbar__btn"><a href="#" data-target="signup" class="button">Sign Up</a></li>
+  <!-- Menu Banner / Navbar -->
+  <div class="menu-banner">
+    <nav>
+      <ul>
+        <li><a href="#" data-target="home" class="active-link">Home</a></li>
+        <li><a href="#" data-target="tech">Tech</a></li>
+        <li><a href="#" data-target="products">Products</a></li>
+        <li><a href="#" data-target="signup">Sign Up</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
-  <!-- HOME SECTION -->
+  <!-- Home / Hero Section -->
   <section id="home" class="hero active">
-    <div class="hero__content">
-      <h1>Empowering the Future</h1>
-      <p>At NEXT, we drive innovation, creativity, and collaboration — building technology that inspires change.</p>
-      <a href="#" class="cta-button">Learn More</a>
-    </div>
+    <h1>Empowering the Future</h1>
+    <p>
+      At WIT, we drive innovation, creativity, and collaboration — building technology that inspires change.
+    </p>
+    <a href="#" class="cta-button">Learn More</a>
 
+    <!-- What We Do -->
     <div class="what-we-do">
-      <h2>What We Do</h2>
-      <p>From cutting-edge development to community-driven projects, NEXT helps ideas grow into impact.</p>
+      <h1>What We Do</h1>
+      <p>
+        From cutting-edge development to community-driven projects, WIT helps ideas grow into impact.
+      </p>
       <div class="activities-icons">
         <div class="activity">
           <span class="icon">💻</span>
@@ -68,52 +62,58 @@
     </div>
   </section>
 
-  <!-- TECH SECTION -->
+  <!-- Tech Section -->
   <section id="tech" class="content">
     <h1>Our Technology</h1>
-    <p>We explore the latest in AI, machine learning, and sustainable design to build the tech of tomorrow.</p>
+    <p>
+      We explore the latest in AI, machine learning, and sustainable design to build the tech of tomorrow.
+    </p>
     <div class="image-container">
       <img src="images/tech1.jpg" alt="AI concept">
       <img src="images/tech2.jpg" alt="Developers collaborating">
     </div>
   </section>
 
-  <!-- PRODUCTS SECTION -->
+  <!-- Products Section -->
   <section id="products" class="content">
     <h1>Our Products</h1>
-    <p>From software solutions to educational tools, NEXT delivers high-quality products for real-world impact.</p>
+    <p>
+      From software solutions to educational tools, WIT delivers high-quality products for real-world impact.
+    </p>
     <div class="image-container">
       <img src="images/product1.jpg" alt="Product showcase">
       <img src="images/product2.jpg" alt="Team building software">
     </div>
   </section>
 
-  <!-- SIGNUP SECTION -->
+  <!-- Signup Section -->
   <section id="signup" class="content">
     <h1>Join Us</h1>
-    <p>Be part of the NEXT movement — where technology meets creativity. Sign up to get involved!</p>
+    <p>
+      Be part of the WIT movement — where technology meets creativity. Sign up to get involved!
+    </p>
     <a href="#" class="cta-button">Sign Up</a>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 NEXT. All rights reserved.</p>
+    <p>&copy; 2025 WIT. All rights reserved.</p>
   </footer>
 
   <!-- JS for section switching -->
   <script>
-    const links = document.querySelectorAll('.navbar__menu .navbar__links, .navbar__btn .button');
+    const links = document.querySelectorAll('.menu-banner nav ul li a');
     const sections = document.querySelectorAll('section');
 
     links.forEach(link => {
-      link.addEventListener('click', e => {
+      link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = link.dataset.target;
 
         // Hide all sections
         sections.forEach(sec => sec.classList.remove('active'));
         const targetSection = document.getElementById(targetId);
-        if (targetSection) targetSection.classList.add('active');
+        if(targetSection) targetSection.classList.add('active');
 
         // Update active link
         links.forEach(l => l.classList.remove('active-link'));
