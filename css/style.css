@@ -1,54 +1,59 @@
+/* =========================
+   RESET + GLOBAL STYLES
+========================= */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Kumbh Sans', sans-serif;
+  box-sizing: border-box;
 }
 
-/* Navbar Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #d9e5f1; /* light blue background */
+  color: #1c1c1c;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
-  background: #131313;
+  background: #ffffff;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
   position: sticky;
   top: 0;
   z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Navbar Container */
 .navbar__container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 80px;
-  z-index: 1;
   width: 100%;
   max-width: 1300px;
-  margin: 0 auto;
   padding: 0 50px;
 }
 
-/* Logo */
 #navbar__logo {
-  background-color: #ff8177;
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
-  background-size: 100%;
+  background: linear-gradient(90deg, #2f4a6d, #5a8cc4);
+  background-clip: text;
   -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
+  color: transparent;
   font-size: 2rem;
-}
-
-/* Icon */
-.fa-gem {
-  margin-right: 0.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 1px;
 }
 
 /* Navbar Menu */
@@ -57,103 +62,86 @@
   align-items: center;
   list-style: none;
   text-align: center;
+  gap: 2rem;
 }
 
-/* Navbar Items */
 .navbar__item {
   height: 80px;
 }
 
-/* Navbar Links */
 .navbar__links {
-  color: #fff;
+  color: #1c1c1c;
   display: flex;
   align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-}
-
-.navbar__btn {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0 1rem;
-  width: 100%;
-}
-
-/* Button */
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 0.5rem 1rem;
   height: 100%;
-  width: 100%;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  background: #f77062;
-  color: #fff;
-}
-
-.button:hover {
-  background: #4837ff;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .navbar__links:hover {
-  color: #f77062;
-  transition: all 0.3s ease;
+  color: #2f4a6d;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 960px) {
-  .navbar__container {
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 0;
-  }
+/* Sign Up Button */
+.navbar__btn .button {
+  padding: 8px 20px;
+  background-color: #2f4a6d;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
 
+.navbar__btn .button:hover {
+  background-color: #1f334c;
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+/* Mobile Menu Active */
+@media screen and (max-width: 960px) {
   .navbar__menu {
-    display: grid;
-    grid-template-columns: auto;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     position: absolute;
     top: -1000px;
     opacity: 0;
     transition: all 0.5s ease;
-    height: 50vh;
-    z-index: -1;
-    background: #131313;
+    background-color: #fff;
+    left: 0;
+    text-align: center;
   }
 
   .navbar__menu.active {
-    background: #131313;
     top: 80px;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 99;
-    height: 50vh;
-    font-size: 1.6rem;
   }
 
-  #navbar__logo {
-    padding-left: 25px;
-  }
-
-  .navbar__toggle .bar {
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background: #fff;
+  .navbar__toggle {
+    display: flex;
   }
 
   .navbar__item {
@@ -161,40 +149,186 @@
   }
 
   .navbar__links {
-    text-align: center;
     padding: 2rem;
-    width: 100%;
-    display: table;
-  }
-
-  #mobile-menu {
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    transform: translate(5%, 20%);
-    cursor: pointer;
+    display: block;
   }
 
   .navbar__btn {
     padding-bottom: 2rem;
   }
+}
 
-  .button {
-    width: 80%;
-    height: 80px;
-    margin: 0 auto;
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  height: 85vh;
+  padding: 0 8rem;
+  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+              url('../images/hero-bg.jpg') center/cover no-repeat;
+  color: #1c1c1c;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #2f4a6d;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1f334c;
+}
+
+/* =========================
+   CONTENT SECTIONS
+========================= */
+.content {
+  text-align: center;
+  padding: 5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* =========================
+   WHAT WE DO / ICON SECTION
+========================= */
+.what-we-do {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.what-we-do h1 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.what-we-do p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.activities-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+}
+
+.activity .icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   IMAGE SECTIONS
+========================= */
+.image-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.image-container img {
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #444;
+  border-top: 1px solid #ccc;
+  box-shadow: 0 -1px 6px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   RESPONSIVENESS
+========================= */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 0 2rem;
+    align-items: center;
+    text-align: center;
   }
 
-  /* Mobile Menu Animation (Hamburger) */
-  #mobile-menu.is-active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+  .hero h1 {
+    font-size: 2.8rem;
   }
 
-  #mobile-menu.is-active .bar:nth-child(2) {
-    opacity: 0;
+  .hero p {
+    font-size: 1.1rem;
   }
 
-  #mobile-menu.is-active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+  .content {
+    padding: 3rem 1.5rem;
+  }
+
+  .what-we-do h1 {
+    font-size: 2.5rem;
+  }
+
+  .image-container img {
+    width: 90%;
   }
 }
