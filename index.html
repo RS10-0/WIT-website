@@ -8,35 +8,27 @@
 </head>
 <body>
 
-  <!-- =========================
-       TOP BANNER
-  ========================== -->
+  <!-- TOP BANNER -->
   <header class="top-banner">
     <h1>Women in Tech</h1>
     <p class="catchphrase">Innovate. Build. Connect.</p>
   </header>
 
-  <!-- =========================
-       NAVBAR
-  ========================== -->
-  <div class="menu-banner">
-    <nav>
-      <ul>
-        <li><a href="#" data-target="home" class="active-link">Home</a></li>
-        <li><a href="#" data-target="about-us">About Us</a></li>
-        <li><a href="#" data-target="activities">Activities</a></li>
-        <li><a href="#" data-target="resources">Resources</a></li>
-      </ul>
-    </nav>
-  </div>
+  <!-- NAVBAR -->
+  <nav class="menu-banner">
+    <ul>
+      <li><a href="#" data-target="home" class="active-link">Home</a></li>
+      <li><a href="#" data-target="about-us">About Us</a></li>
+      <li><a href="#" data-target="activities">Activities</a></li>
+      <li><a href="#" data-target="resources">Resources</a></li>
+    </ul>
+  </nav>
 
-  <!-- =========================
-       HOME / MISSION SECTION
-  ========================== -->
+  <!-- HOME / MISSION -->
   <section id="home" class="hero active">
     <div class="mission-container">
       <div class="mission-text">
-        <h1>Our Mission</h1>
+        <h2>Our Mission</h2>
         <p>
           Women in Tech empowers young women and allies to explore STEM, build skills, and connect with a supportive community.
           Through workshops, mentorship, and hands-on projects, we aim to inspire curiosity, confidence, and innovation in the next
@@ -48,15 +40,14 @@
       </div>
     </div>
 
-    <!-- What We Do -->
+    <!-- WHAT WE DO -->
     <div class="what-we-do">
-      <h1>What We Do</h1>
+      <h2>What We Do</h2>
       <p>
         From coding workshops and robotics projects to guest speaker panels and mentorship opportunities, Women in Tech provides
         hands-on experiences that spark curiosity and build real skills. Members collaborate, learn, and grow together while exploring
         a wide range of STEM fields.
       </p>
-
       <div class="activities-icons">
         <div class="activity">
           <span class="icon">🖥</span>
@@ -78,11 +69,9 @@
     </div>
   </section>
 
-  <!-- =========================
-       ACTIVITIES SECTION
-  ========================== -->
+  <!-- ACTIVITIES SECTION -->
   <section id="activities" class="content">
-    <h1>Activities</h1>
+    <h2>Activities</h2>
     <p>
       Participate in our community events, hackathons, and leadership activities that encourage collaboration, innovation, and empowerment.
     </p>
@@ -92,11 +81,9 @@
     </div>
   </section>
 
-  <!-- =========================
-       RESOURCES SECTION
-  ========================== -->
+  <!-- RESOURCES SECTION -->
   <section id="resources" class="content">
-    <h1>Resources</h1>
+    <h2>Resources</h2>
     <p>
       Explore our collection of learning materials, tutorials, and mentorship guides designed to help women succeed in technology careers.
     </p>
@@ -106,28 +93,22 @@
     </div>
   </section>
 
-  <!-- =========================
-       ABOUT US SECTION
-  ========================== -->
+  <!-- ABOUT US SECTION -->
   <section id="about-us" class="content">
-    <h1>About Us</h1>
+    <h2>About Us</h2>
     <p>
       Women in Tech is dedicated to empowering young women by providing access to educational resources, mentorship programs, and skill-building workshops in STEM fields.
     </p>
   </section>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Women in Tech. All rights reserved.</p>
   </footer>
 
-  <!-- =========================
-       SECTION SWITCHING SCRIPT
-  ========================== -->
+  <!-- SECTION SWITCHING SCRIPT -->
   <script>
-    const links = document.querySelectorAll('.menu-banner nav ul li a');
+    const links = document.querySelectorAll('.menu-banner ul li a');
     const sections = document.querySelectorAll('section');
 
     links.forEach(link => {
@@ -135,12 +116,9 @@
         e.preventDefault();
         const targetId = link.dataset.target;
 
-        // Toggle sections
         sections.forEach(sec => sec.classList.remove('active'));
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) targetSection.classList.add('active');
+        document.getElementById(targetId).classList.add('active');
 
-        // Toggle active link styling
         links.forEach(l => l.classList.remove('active-link'));
         link.classList.add('active-link');
       });
