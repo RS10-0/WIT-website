@@ -25,7 +25,7 @@
   </nav>
 
   <!-- HOME / MISSION -->
-  <section id="home" class="hero active">
+  <section id="home" class="active">
     <div class="mission-container">
       <div class="mission-text">
         <h2>Our Mission</h2>
@@ -40,7 +40,6 @@
       </div>
     </div>
 
-    <!-- WHAT WE DO -->
     <div class="what-we-do">
       <h2>What We Do</h2>
       <p>
@@ -69,8 +68,8 @@
     </div>
   </section>
 
-  <!-- ACTIVITIES SECTION -->
-  <section id="activities" class="content">
+  <!-- ACTIVITIES -->
+  <section id="activities">
     <h2>Activities</h2>
     <p>
       Participate in our community events, hackathons, and leadership activities that encourage collaboration, innovation, and empowerment.
@@ -81,8 +80,8 @@
     </div>
   </section>
 
-  <!-- RESOURCES SECTION -->
-  <section id="resources" class="content">
+  <!-- RESOURCES -->
+  <section id="resources">
     <h2>Resources</h2>
     <p>
       Explore our collection of learning materials, tutorials, and mentorship guides designed to help women succeed in technology careers.
@@ -93,8 +92,8 @@
     </div>
   </section>
 
-  <!-- ABOUT US SECTION -->
-  <section id="about-us" class="content">
+  <!-- ABOUT US -->
+  <section id="about-us">
     <h2>About Us</h2>
     <p>
       Women in Tech is dedicated to empowering young women by providing access to educational resources, mentorship programs, and skill-building workshops in STEM fields.
@@ -106,10 +105,13 @@
     <p>&copy; 2025 Women in Tech. All rights reserved.</p>
   </footer>
 
-  <!-- SECTION SWITCHING SCRIPT -->
+  <!-- JS: Section Switching -->
   <script>
     const links = document.querySelectorAll('.menu-banner ul li a');
     const sections = document.querySelectorAll('section');
+
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById('home').classList.add('active');
 
     links.forEach(link => {
       link.addEventListener('click', e => {
