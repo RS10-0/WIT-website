@@ -1,62 +1,47 @@
-/* =========================
-   RESET + GLOBAL STYLES
-========================= */
+/* GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Inter', sans-serif;
+  line-height: 1.6;
   background-color: #d9e5f1;
   color: #1c1c1c;
-  line-height: 1.6;
 }
 
-/* =========================
-   TOP BANNER
-========================= */
+/* TOP BANNER */
 .top-banner {
-  width: 100%;
-  background-color: #d9e5f1;
-  padding: 4rem 2rem;
   text-align: center;
+  padding: 3rem 2rem;
 }
 
 .top-banner h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .top-banner .catchphrase {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.2rem;
   color: #2f4a6d;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 .menu-banner {
-  background-color: #fff;
-  width: 100%;
+  background: #fff;
   text-align: center;
   padding: 1rem 0;
-  border-bottom: 1px solid #ccc;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .menu-banner ul {
   display: flex;
   justify-content: center;
+  gap: 2rem;
   list-style: none;
-  gap: 3rem;
   flex-wrap: wrap;
 }
 
@@ -64,51 +49,49 @@ body {
   text-decoration: none;
   color: #1c1c1c;
   font-weight: 700;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
 }
 
 .menu-banner ul li a.active-link,
 .menu-banner ul li a:hover {
   color: #2f4a6d;
-  font-weight: 800;
 }
 
-/* =========================
-   HERO / MISSION SECTION
-========================= */
-.hero {
-  padding: 4rem 2rem;
-  background-color: #d9e5f1;
-}
-
-.mission-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
+/* SECTIONS */
+section {
+  display: none;
+  padding: 3rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+section.active {
+  display: block;
+}
+
+/* MISSION */
+.mission-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .mission-text {
-  flex: 1 1 500px;
+  flex: 1 1 300px;
 }
 
 .mission-text h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .mission-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
+  font-size: 1rem;
 }
 
 .mission-image {
-  flex: 1 1 400px;
+  flex: 1 1 300px;
   text-align: center;
 }
 
@@ -116,87 +99,56 @@ body {
   width: 100%;
   max-width: 400px;
   border-radius: 12px;
-  object-fit: cover;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* =========================
-   WHAT WE DO / ICONS
-========================= */
+/* WHAT WE DO */
 .what-we-do {
   text-align: center;
-  margin-top: 4rem;
-}
-
-.what-we-do h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.what-we-do p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
+  margin-top: 2rem;
 }
 
 .activities-icons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
 .activity {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  width: 150px;
+  width: 120px;
 }
 
 .activity .icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
-/* =========================
-   CONTENT SECTIONS (Activities / Resources / About Us)
-========================= */
-.content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
+/* CONTENT SECTIONS */
 .content h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* =========================
-   IMAGE CONTAINERS
-========================= */
+/* IMAGE CONTAINERS */
 .image-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
 }
 
 .image-container img {
   width: 100%;
   max-width: 400px;
-  height: auto;
   border-radius: 12px;
-  object-fit: cover;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
 }
@@ -205,61 +157,20 @@ body {
   transform: scale(1.03);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer {
   text-align: center;
-  background-color: #fff;
   padding: 2rem;
+  background: #fff;
   border-top: 1px solid #ccc;
   box-shadow: 0 -1px 6px rgba(0,0,0,0.05);
-  font-size: 0.9rem;
-  color: #444;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-@media screen and (max-width: 960px) {
-  .mission-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .activities-icons {
-    gap: 1rem;
-  }
-
-  .image-container img {
-    max-width: 90%;
-  }
-}
-
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
-  .top-banner h1 {
-    font-size: 2.8rem;
-  }
-
-  .top-banner .catchphrase {
-    font-size: 1.2rem;
-  }
-
-  .menu-banner ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .mission-text p,
-  .what-we-do p,
-  .content p {
-    font-size: 1rem;
-  }
-
-  .what-we-do h2,
-  .content h2,
-  .mission-text h2 {
-    font-size: 2rem;
-  }
+  .top-banner h1 { font-size: 2rem; }
+  .mission-text h2, .content h2 { font-size: 1.5rem; }
+  .mission-text p, .content p { font-size: 0.95rem; }
+  .menu-banner ul { flex-direction: column; gap: 1rem; }
+  .mission-container { flex-direction: column; }
 }
