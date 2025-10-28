@@ -15,20 +15,22 @@
   </header>
 
   <!-- NAVBAR -->
-  <nav class="menu-banner">
-    <ul>
-      <li><a href="#" data-target="home" class="active-link">Home</a></li>
-      <li><a href="#" data-target="about-us">About Us</a></li>
-      <li><a href="#" data-target="activities">Activities</a></li>
-      <li><a href="#" data-target="resources">Resources</a></li>
-    </ul>
-  </nav>
+  <div class="menu-banner">
+    <nav>
+      <ul>
+        <li><a href="#" data-target="home" class="active-link">Home</a></li>
+        <li><a href="#" data-target="about-us">About Us</a></li>
+        <li><a href="#" data-target="activities">Activities</a></li>
+        <li><a href="#" data-target="resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <!-- HOME / MISSION -->
-  <section id="home" class="active">
+  <section id="home" class="hero active">
     <div class="mission-container">
       <div class="mission-text">
-        <h2>Our Mission</h2>
+        <h1>Our Mission</h1>
         <p>
           Women in Tech empowers young women and allies to explore STEM, build skills, and connect with a supportive community.
           Through workshops, mentorship, and hands-on projects, we aim to inspire curiosity, confidence, and innovation in the next
@@ -40,8 +42,9 @@
       </div>
     </div>
 
+    <!-- WHAT WE DO -->
     <div class="what-we-do">
-      <h2>What We Do</h2>
+      <h1>What We Do</h1>
       <p>
         From coding workshops and robotics projects to guest speaker panels and mentorship opportunities, Women in Tech provides
         hands-on experiences that spark curiosity and build real skills. Members collaborate, learn, and grow together while exploring
@@ -69,8 +72,8 @@
   </section>
 
   <!-- ACTIVITIES -->
-  <section id="activities">
-    <h2>Activities</h2>
+  <section id="activities" class="content">
+    <h1>Activities</h1>
     <p>
       Participate in our community events, hackathons, and leadership activities that encourage collaboration, innovation, and empowerment.
     </p>
@@ -81,8 +84,8 @@
   </section>
 
   <!-- RESOURCES -->
-  <section id="resources">
-    <h2>Resources</h2>
+  <section id="resources" class="content">
+    <h1>Resources</h1>
     <p>
       Explore our collection of learning materials, tutorials, and mentorship guides designed to help women succeed in technology careers.
     </p>
@@ -93,8 +96,8 @@
   </section>
 
   <!-- ABOUT US -->
-  <section id="about-us">
-    <h2>About Us</h2>
+  <section id="about-us" class="content">
+    <h1>About Us</h1>
     <p>
       Women in Tech is dedicated to empowering young women by providing access to educational resources, mentorship programs, and skill-building workshops in STEM fields.
     </p>
@@ -107,25 +110,28 @@
 
   <!-- JS: Section Switching -->
   <script>
-    const links = document.querySelectorAll('.menu-banner ul li a');
+    const links = document.querySelectorAll('.menu-banner nav ul li a');
     const sections = document.querySelectorAll('section');
 
-    sections.forEach(sec => sec.classList.remove('active'));
-    document.getElementById('home').classList.add('active');
+    // Show only the active section
+    function showSection(id) {
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
 
     links.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
-        const targetId = link.dataset.target;
-
-        sections.forEach(sec => sec.classList.remove('active'));
-        document.getElementById(targetId).classList.add('active');
+        const target = link.dataset.target;
+        showSection(target);
 
         links.forEach(l => l.classList.remove('active-link'));
         link.classList.add('active-link');
       });
     });
-  </script>
 
+    // Initialize
+    showSection('home');
+  </script>
 </body>
 </html>
