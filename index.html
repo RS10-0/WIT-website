@@ -1,91 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Women in Tech</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="scripts/app.js" defer></script>
-  <style>
-    /* Inline styles for layout tweaks (can also go in style.css) */
-    
-    /* Our Mission Section: side-by-side layout */
-    .mission-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-      padding: 4rem 8rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .mission-container .mission-text {
-      flex: 1 1 500px;
-      text-align: left;
-    }
-
-    .mission-container .mission-text h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .mission-container .mission-text p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    .mission-container .mission-image {
-      flex: 1 1 400px;
-      text-align: right;
-    }
-
-    .mission-container .mission-image img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    /* What We Do section tweaks */
-    .activities-icons {
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 2rem 0;
-    }
-
-    .activity {
-      width: 150px;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Responsive tweaks */
-    @media screen and (max-width: 960px) {
-      .mission-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .mission-container .mission-image {
-        text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- Top Banner -->
-  <div class="top-banner">
+  <!-- =========================
+       TOP BANNER
+  ========================== -->
+  <header class="top-banner">
     <h1>Women in Tech</h1>
     <p class="catchphrase">Innovate. Build. Connect.</p>
-  </div>
+  </header>
 
-  <!-- Navbar -->
+  <!-- =========================
+       NAVBAR
+  ========================== -->
   <div class="menu-banner">
     <nav>
       <ul>
@@ -97,11 +30,13 @@
     </nav>
   </div>
 
-  <!-- Home / Hero Section -->
+  <!-- =========================
+       HOME / MISSION SECTION
+  ========================== -->
   <section id="home" class="hero active">
-    <h1>Our Mission</h1>
     <div class="mission-container">
       <div class="mission-text">
+        <h1>Our Mission</h1>
         <p>
           Women in Tech empowers young women and allies to explore STEM, build skills, and connect with a supportive community.
           Through workshops, mentorship, and hands-on projects, we aim to inspire curiosity, confidence, and innovation in the next
@@ -109,7 +44,7 @@
         </p>
       </div>
       <div class="mission-image">
-        <img src="https://via.placeholder.com/400x300?text=Our+Mission+Image" alt="Our Mission">
+        <img src="https://via.placeholder.com/400x300?text=Our+Mission+Image" alt="Our Mission" />
       </div>
     </div>
 
@@ -121,6 +56,7 @@
         hands-on experiences that spark curiosity and build real skills. Members collaborate, learn, and grow together while exploring
         a wide range of STEM fields.
       </p>
+
       <div class="activities-icons">
         <div class="activity">
           <span class="icon">🖥</span>
@@ -142,31 +78,37 @@
     </div>
   </section>
 
-  <!-- Activities Section -->
+  <!-- =========================
+       ACTIVITIES SECTION
+  ========================== -->
   <section id="activities" class="content">
     <h1>Activities</h1>
     <p>
       Participate in our community events, hackathons, and leadership activities that encourage collaboration, innovation, and empowerment.
     </p>
     <div class="image-container">
-      <img src="https://via.placeholder.com/400x250?text=Workshop+1" alt="Workshop 1">
-      <img src="https://via.placeholder.com/400x250?text=Workshop+2" alt="Workshop 2">
+      <img src="https://via.placeholder.com/400x250?text=Workshop+1" alt="Workshop 1" />
+      <img src="https://via.placeholder.com/400x250?text=Workshop+2" alt="Workshop 2" />
     </div>
   </section>
 
-  <!-- Resources Section -->
+  <!-- =========================
+       RESOURCES SECTION
+  ========================== -->
   <section id="resources" class="content">
     <h1>Resources</h1>
     <p>
       Explore our collection of learning materials, tutorials, and mentorship guides designed to help women succeed in technology careers.
     </p>
     <div class="image-container">
-      <img src="https://via.placeholder.com/400x250?text=Resource+1" alt="Resource 1">
-      <img src="https://via.placeholder.com/400x250?text=Resource+2" alt="Resource 2">
+      <img src="https://via.placeholder.com/400x250?text=Resource+1" alt="Resource 1" />
+      <img src="https://via.placeholder.com/400x250?text=Resource+2" alt="Resource 2" />
     </div>
   </section>
 
-  <!-- About Us Section -->
+  <!-- =========================
+       ABOUT US SECTION
+  ========================== -->
   <section id="about-us" class="content">
     <h1>About Us</h1>
     <p>
@@ -174,25 +116,31 @@
     </p>
   </section>
 
-  <!-- Footer -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer>
     <p>&copy; 2025 Women in Tech. All rights reserved.</p>
   </footer>
 
-  <!-- Section Switching JS -->
+  <!-- =========================
+       SECTION SWITCHING SCRIPT
+  ========================== -->
   <script>
     const links = document.querySelectorAll('.menu-banner nav ul li a');
     const sections = document.querySelectorAll('section');
 
     links.forEach(link => {
-      link.addEventListener('click', (e) => {
+      link.addEventListener('click', e => {
         e.preventDefault();
         const targetId = link.dataset.target;
 
+        // Toggle sections
         sections.forEach(sec => sec.classList.remove('active'));
         const targetSection = document.getElementById(targetId);
-        if(targetSection) targetSection.classList.add('active');
+        if (targetSection) targetSection.classList.add('active');
 
+        // Toggle active link styling
         links.forEach(l => l.classList.remove('active-link'));
         link.classList.add('active-link');
       });
