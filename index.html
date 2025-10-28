@@ -1,137 +1,189 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Women in Tech</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women in Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --light-blue: #e6f0ff;
+            --dark-blue: #4a86e8;
+            --text-dark: #333;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
 
-  <!-- TOP BANNER -->
-  <header class="top-banner">
-    <h1>Women in Tech</h1>
-    <p class="catchphrase">Innovate. Build. Connect.</p>
-  </header>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- NAVBAR -->
-  <div class="menu-banner">
-    <nav>
-      <ul>
-        <li><a href="#" data-target="home" class="active-link">Home</a></li>
-        <li><a href="#" data-target="about-us">About Us</a></li>
-        <li><a href="#" data-target="activities">Activities</a></li>
-        <li><a href="#" data-target="resources">Resources</a></li>
-      </ul>
-    </nav>
-  </div>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
 
-  <!-- HOME / MISSION -->
-  <section id="home" class="hero active">
-    <div class="mission-container">
-      <div class="mission-text">
-        <h1>Our Mission</h1>
-        <p>
-          Women in Tech empowers young women and allies to explore STEM, build skills, and connect with a supportive community.
-          Through workshops, mentorship, and hands-on projects, we aim to inspire curiosity, confidence, and innovation in the next
-          generation of tech leaders.
-        </p>
-      </div>
-      <div class="mission-image">
-        <img src="https://via.placeholder.com/400x300?text=Our+Mission+Image" alt="Our Mission" />
-      </div>
-    </div>
+        /* Header & Navigation */
+        header {
+            background: var(--light-blue);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
 
-    <!-- WHAT WE DO -->
-    <div class="what-we-do">
-      <h1>What We Do</h1>
-      <p>
-        From coding workshops and robotics projects to guest speaker panels and mentorship opportunities, Women in Tech provides
-        hands-on experiences that spark curiosity and build real skills. Members collaborate, learn, and grow together while exploring
-        a wide range of STEM fields.
-      </p>
-      <div class="activities-icons">
-        <div class="activity">
-          <span class="icon">🖥</span>
-          <p>Coding Workshops</p>
-        </div>
-        <div class="activity">
-          <span class="icon">🤖</span>
-          <p>Robotics & Projects</p>
-        </div>
-        <div class="activity">
-          <span class="icon">🎤</span>
-          <p>Guest Speakers</p>
-        </div>
-        <div class="activity">
-          <span class="icon">💡</span>
-          <p>Mentorship</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+        }
 
-  <!-- ACTIVITIES -->
-  <section id="activities" class="content">
-    <h1>Activities</h1>
-    <p>
-      Participate in our community events, hackathons, and leadership activities that encourage collaboration, innovation, and empowerment.
-    </p>
-    <div class="image-container">
-      <img src="https://via.placeholder.com/400x250?text=Workshop+1" alt="Workshop 1" />
-      <img src="https://via.placeholder.com/400x250?text=Workshop+2" alt="Workshop 2" />
-    </div>
-  </section>
+        .hero p {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+        }
 
-  <!-- RESOURCES -->
-  <section id="resources" class="content">
-    <h1>Resources</h1>
-    <p>
-      Explore our collection of learning materials, tutorials, and mentorship guides designed to help women succeed in technology careers.
-    </p>
-    <div class="image-container">
-      <img src="https://via.placeholder.com/400x250?text=Resource+1" alt="Resource 1" />
-      <img src="https://via.placeholder.com/400x250?text=Resource+2" alt="Resource 2" />
-    </div>
-  </section>
+        nav {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-  <!-- ABOUT US -->
-  <section id="about-us" class="content">
-    <h1>About Us</h1>
-    <p>
-      Women in Tech is dedicated to empowering young women by providing access to educational resources, mentorship programs, and skill-building workshops in STEM fields.
-    </p>
-  </section>
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Women in Tech. All rights reserved.</p>
-  </footer>
+        nav ul {
+            display: flex;
+            list-style: none;
+            width: 100%;
+            justify-content: space-around;
+        }
 
-  <!-- JS: Section Switching -->
-  <script>
-    const links = document.querySelectorAll('.menu-banner nav ul li a');
-    const sections = document.querySelectorAll('section');
+        nav li {
+            padding: 1.2rem 0;
+            flex: 1;
+            text-align: center;
+        }
 
-    // Show only the active section
-    function showSection(id) {
-      sections.forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
 
-    links.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = link.dataset.target;
-        showSection(target);
+        nav a.active {
+            color: var(--dark-blue);
+        }
 
-        links.forEach(l => l.classList.remove('active-link'));
-        link.classList.add('active-link');
-      });
-    });
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--dark-blue);
+        }
 
-    // Initialize
-    showSection('home');
-  </script>
-</body>
-</html>
+        /* Main Content Sections */
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 70vh;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .mission-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .mission-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .mission-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .activity-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .activity-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        footer {
+            background: var(--light-blue);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                padding: 0.8rem 0;
+            }
+
+            .mission-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max
