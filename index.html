@@ -6,177 +6,113 @@
     <title>TechNova | Innovate. Build. Connect.</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
         :root {
-            /* Light Purple Palette */
-            --bg-purple: #f8f7ff; 
-            --accent-purple: #8b5cf6;
-            --dark-purple: #1e1b4b;
-            --text-main: #334155;
-            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --soft-purple: #f3f0ff; /* The light purple shade for the top */
+            --brand-purple: #7c3aed; /* For buttons and accents */
+            --deep-navy: #1e293b;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: white;
-            color: var(--text-main);
-            margin: 0;
-        }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
 
-        /* Top Hero Section with Light Purple Shade */
-        .hero-section {
-            background-color: var(--bg-purple);
-            padding: 80px 20px;
+        /* The "Top" Hero section you mentioned */
+        .hero-top {
+            background-color: var(--soft-purple);
+            padding: 100px 20px;
             text-align: center;
         }
 
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--dark-purple);
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-        }
-
-        /* Button Styling */
-        .btn-join {
-            background-color: var(--dark-purple);
-            color: white;
-            padding: 12px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: transform 0.2s ease;
-            box-shadow: 0 4px 14px rgba(30, 27, 75, 0.25);
-        }
-
-        .btn-join:hover {
-            transform: translateY(-2px);
-            background-color: #2e2a5e;
-        }
-
-        /* Navigation */
-        .nav-sticky {
+        /* Navigation styling matching your screenshot */
+        .nav-bar {
+            border-bottom: 1px solid #e5e7eb;
+            background: white;
             position: sticky;
             top: 0;
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
-            z-index: 100;
+            z-index: 50;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        nav li {
-            flex: 1;
-            text-align: center;
-            padding: 1.2rem 0;
+        .nav-link {
+            padding: 1rem 1.5rem;
+            color: #4b5563;
             font-weight: 500;
             cursor: pointer;
-            transition: color 0.3s;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
         }
 
-        nav li:hover {
-            color: var(--accent-purple);
+        .nav-link:hover { color: var(--brand-purple); }
+        .nav-link.active { 
+            border-bottom: 2px solid var(--brand-purple); 
+            color: var(--deep-navy);
         }
 
-        .active-tab {
-            border-bottom: 3px solid var(--accent-purple);
-            color: var(--accent-purple);
-        }
-
-        /* Cards and Sections */
-        .section-container {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
+        /* Card styling for "Upcoming Events" */
         .event-card {
-            background: white;
-            border: 1px solid #f0f0f0;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: var(--shadow);
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
+            border-radius: 12px;
+            border: 1px solid #f3f4f6;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
         }
-
-        .badge-beginner {
-            background: #f3e8ff;
-            color: #7e22ce;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
+        
+        .event-card:hover { transform: translateY(-3px); }
     </style>
 </head>
-<body>
+<body class="bg-white">
 
-    <header class="hero-section">
-        <h1 class="hero-title">TechNova</h1>
-        <p class="hero-subtitle">Innovate. Build. Connect.</p>
-        <button class="btn-join">Join Our Community</button>
-    </header>
+    <section class="hero-top">
+        <h1 class="text-6xl font-extrabold text-slate-900 mb-4">TechNova</h1>
+        <p class="text-xl text-slate-600 mb-8">Innovate. Build. Connect.</p>
+        <button class="bg-slate-800 text-white px-8 py-3 rounded-md font-bold hover:bg-slate-700 transition">
+            Join Our Community
+        </button>
+    </section>
 
-    <div class="nav-sticky">
-        <nav>
-            <ul>
-                <li class="active-tab">Home</li>
-                <li>Activities</li>
-                <li>About Us</li>
-                <li>Resources</li>
-                <li>FAQ</li>
-            </ul>
-        </nav>
-    </div>
+    <nav class="nav-bar">
+        <div class="max-w-4xl mx-auto flex justify-center">
+            <div class="nav-link active">Home</div>
+            <div class="nav-link">Activities</div>
+            <div class="nav-link">About Us</div>
+            <div class="nav-link">Resources</div>
+            <div class="nav-link">FAQ</div>
+        </div>
+    </nav>
 
-    <main class="section-container">
-        
-        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+    <main class="max-w-6xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
-                <p class="text-lg text-gray-600">
-                    TechNova's mission is to enrich the community by delivering hands-on STEM education to children of all ages. We believe in cultivating diversity from a young age, striving to ensure every learner, particularly <strong>young women</strong>, has the tools to become a confident technical leader.
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">Our Mission</h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    TechNova's mission is to enrich the community by delivering hands-on STEM education to children of all ages. 
+                    We believe in cultivating diversity from a young age, striving to ensure every learner, 
+                    particularly <span class="font-bold text-slate-900">young women</span>, has the tools to become a confident technical leader.
                 </p>
             </div>
-            <div class="rounded-2xl overflow-hidden shadow-xl">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800" alt="Tech learning">
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=800" alt="TechNova Education">
             </div>
         </div>
 
-        <section class="text-center">
-            <h2 class="text-3xl font-bold mb-2">Upcoming Events</h2>
-            <p class="text-gray-500 mb-8">Join us for workshops, speaker sessions, and community events</p>
+        <section class="mt-32 text-center">
+            <h2 class="text-4xl font-bold text-slate-900 mb-2">Upcoming Events</h2>
+            <p class="text-slate-500 mb-12">Join us for workshops, speaker sessions, and community events</p>
             
-            <div class="event-card text-left max-w-3xl mx-auto">
+            <div class="event-card bg-white p-8 max-w-3xl mx-auto text-left flex gap-6">
                 <div class="text-4xl">🚀</div>
                 <div class="flex-1">
                     <div class="flex justify-between items-start">
-                        <h3 class="text-xl font-bold">Empowering Future Leaders: Women in Tech</h3>
-                        <span class="badge-beginner">Beginner Friendly</span>
+                        <h3 class="text-xl font-bold text-slate-900">Empowering Future Leaders: Women in Tech</h3>
+                        <span class="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full">Beginner Friendly</span>
                     </div>
-                    <p class="text-purple-600 font-semibold text-sm my-1">Tuesday, February 11 • 5:00 PM - 6:30 PM</p>
-                    <p class="text-gray-600 mt-2">Join us for an inspiring online session dedicated to celebrating the power of women in technology! We will share stories, build confidence, and collaborate on a creative mini-project.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-gray-400 text-sm">📍 Online (Link sent upon registration)</span>
-                        <button class="bg-purple-600 text-white px-6 py-2 rounded-lg font-bold">Sign Up Free</button>
+                    <p class="text-purple-600 font-semibold text-sm mt-1">Tuesday, February 11 • 5:00 PM - 6:30 PM</p>
+                    <p class="text-slate-600 mt-4">Join us for an inspiring online session dedicated to celebrating the power of women in technology! Share stories, build confidence, and collaborate on a creative mini-project.</p>
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="text-slate-400 text-sm">📍 Online (Link sent upon registration)</span>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-bold transition">Sign Up Free</button>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
 </body>
