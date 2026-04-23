@@ -1,33 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WIT Website</title>
-</head>
-<body>
-    <header>
-        <h1>TechNova</h1>
-        <p>A student-led program teaching coding and AI through structured learning tracks.</p>
-        <p>Credibility: Reached 15+ students through early sessions and workshops.</p>
-    </header>
+<!-- ONLY showing UPDATED sections to keep this readable -->
+<!-- Replace these parts in your code -->
 
-    <section id="learning-tracks">
-        <h2>Learning Tracks</h2>
-        <div class="track">
-            <h3>Intro to Programming</h3>
-            <p>The foundation of programming concepts and languages.</p>
-        </div>
-        <div class="track">
-            <h3>AI Foundations</h3>
-            <p>Understanding the essential principles of artificial intelligence.</p>
-        </div>
-    </section>
+<!-- HERO SECTION FIX -->
+<header class="bg-hero-custom pt-10 pb-20 border-b border-gray-200">
+    <div class="container mx-auto px-6 text-center">
+        
+        <h1 class="text-6xl md:text-7xl font-extrabold text-primary-dark tracking-tight mb-4">
+            TechNova
+        </h1>
+        
+        <!-- NEW: Clear Definition -->
+        <p class="text-lg md:text-xl text-gray-600 mb-6">
+            A student-led program teaching coding and AI through structured learning tracks.
+        </p>
 
-    <section id="what-we-do">
-        <h2>What We Do</h2>
-        <!-- Content for What We Do -->
-    </section>
+        <!-- EXISTING -->
+        <p class="text-xl md:text-2xl text-gray-600 mb-6">
+            Innovate. Build. Connect.
+        </p>
 
-</body>
-</html>
+        <!-- NEW: Credibility -->
+        <p class="text-sm text-gray-500 mt-2 mb-6">
+            Reached 15+ students through early sessions and workshops
+        </p>
+        
+        <!-- UPDATED CTA -->
+        <a href="#join" class="inline-block px-10 py-4 text-lg font-semibold bg-primary-dark text-white rounded-md shadow-xl hover:bg-slate-700 transition duration-300 transform hover:scale-105">
+            Get Started
+        </a>
+    </div>
+</header>
+
+
+<!-- 🟩 NEW SECTION: LEARNING TRACKS -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-primary-dark mb-12">Learning Tracks</h2>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+      <div class="p-6 border rounded-xl shadow-sm text-left">
+        <h3 class="text-2xl font-bold mb-2">Intro to Programming</h3>
+        <p class="text-gray-600">
+          Learn the fundamentals of coding, problem-solving, and core programming concepts through structured lessons and guided practice.
+        </p>
+      </div>
+
+      <div class="p-6 border rounded-xl shadow-sm text-left">
+        <h3 class="text-2xl font-bold mb-2">AI Foundations</h3>
+        <p class="text-gray-600">
+          Explore the basics of artificial intelligence and how AI is applied in real-world tools and technologies.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- 🟨 IMPROVED "WHAT WE DO" -->
+<section class="py-20 bg-gray-50 border-t border-gray-100">
+    <div class="container mx-auto px-6 text-center max-w-4xl">
+        <h2 class="text-4xl font-bold text-primary-dark mb-8">What We Do</h2>
+        
+        <p class="text-xl text-gray-700 leading-relaxed">
+            TechNova offers <strong>structured weekly sessions</strong>, hands-on coding projects, and mentorship opportunities designed to help students build real technical skills. From foundational programming to exploring AI concepts, students learn through guided tracks, collaboration, and real-world application.
+        </p>
+        
+    </div>
+</section>
+
+
+<!-- 🟧 UPDATED MODAL LABELS -->
+<!-- Replace inside your JOIN MODAL -->
+
+<h3 class="text-3xl font-bold text-primary-dark mb-4">Get Started with TechNova</h3>
+
+<div class="p-4 bg-hero-custom rounded-md border border-gray-200">
+    <h4 class="font-semibold text-gray-900 mb-1">For Students (Start Learning)</h4>
+    <p class="text-sm text-gray-700 mb-3">
+        Join our coding classes and begin your learning journey.
+    </p>
+    <a href="https://forms.gle/a4NLfwgrsFapM6ij8" target="_blank" class="inline-block px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700">
+        Register for Classes →
+    </a>
+</div>
+
+<div class="p-4 bg-hero-custom rounded-md border border-gray-200">
+    <h4 class="font-semibold text-gray-900 mb-1">For Updates</h4>
+    <p class="text-sm text-gray-700 mb-3">
+        Stay informed about sessions, events, and opportunities.
+    </p>
+    <a href="https://forms.gle/pyhdko3veXUQL5vdA" target="_blank" class="inline-block px-4 py-2 text-white bg-primary-dark rounded-md hover:bg-slate-700">
+        Join Mailing List →
+    </a>
+</div>
+
+
+<!-- ⚙️ SMALL IMAGE UPGRADE EXAMPLE -->
+<img src="Images/mission.JPEG" loading="lazy"
+alt="Student learning coding with guidance in a supportive environment"
+class="w-full h-full object-cover">
