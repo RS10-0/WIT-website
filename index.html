@@ -7,51 +7,177 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* ALL YOUR STYLES GO HERE AND ONLY HERE */
         :root {
-            --light-blue: #e6f0ff;
-            --dark-blue: #4a86e8;
-            --text-dark: #333;
-            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            /* Light Purple Palette */
+            --bg-purple: #f8f7ff; 
+            --accent-purple: #8b5cf6;
+            --dark-purple: #1e1b4b;
+            --text-main: #334155;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
+            background-color: white;
+            color: var(--text-main);
             margin: 0;
         }
 
-        .bg-hero-custom { background-color: #f0f4f7; }
-        .text-primary-dark { color: #1e293b; }
-        .bg-primary-dark { background-color: #1e293b; }
+        /* Top Hero Section with Light Purple Shade */
+        .hero-section {
+            background-color: var(--bg-purple);
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--dark-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        /* Button Styling */
+        .btn-join {
+            background-color: var(--dark-purple);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 14px rgba(30, 27, 75, 0.25);
+        }
+
+        .btn-join:hover {
+            transform: translateY(-2px);
+            background-color: #2e2a5e;
+        }
+
+        /* Navigation */
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 100;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            width: 100%;
-            justify-content: space-around;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 0;
-            margin: 0;
         }
 
         nav li {
-            padding: 1.2rem 0;
             flex: 1;
             text-align: center;
+            padding: 1.2rem 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s;
         }
 
-        .hidden { display: none; }
+        nav li:hover {
+            color: var(--accent-purple);
+        }
+
+        .active-tab {
+            border-bottom: 3px solid var(--accent-purple);
+            color: var(--accent-purple);
+        }
+
+        /* Cards and Sections */
+        .section-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .event-card {
+            background: white;
+            border: 1px solid #f0f0f0;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .badge-beginner {
+            background: #f3e8ff;
+            color: #7e22ce;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-800">
-    ```
+<body>
 
-Does that clear up the "code vomit" on the screen?
+    <header class="hero-section">
+        <h1 class="hero-title">TechNova</h1>
+        <p class="hero-subtitle">Innovate. Build. Connect.</p>
+        <button class="btn-join">Join Our Community</button>
+    </header>
+
+    <div class="nav-sticky">
+        <nav>
+            <ul>
+                <li class="active-tab">Home</li>
+                <li>Activities</li>
+                <li>About Us</li>
+                <li>Resources</li>
+                <li>FAQ</li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="section-container">
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div>
+                <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
+                <p class="text-lg text-gray-600">
+                    TechNova's mission is to enrich the community by delivering hands-on STEM education to children of all ages. We believe in cultivating diversity from a young age, striving to ensure every learner, particularly <strong>young women</strong>, has the tools to become a confident technical leader.
+                </p>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-xl">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800" alt="Tech learning">
+            </div>
+        </div>
+
+        <section class="text-center">
+            <h2 class="text-3xl font-bold mb-2">Upcoming Events</h2>
+            <p class="text-gray-500 mb-8">Join us for workshops, speaker sessions, and community events</p>
+            
+            <div class="event-card text-left max-w-3xl mx-auto">
+                <div class="text-4xl">🚀</div>
+                <div class="flex-1">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold">Empowering Future Leaders: Women in Tech</h3>
+                        <span class="badge-beginner">Beginner Friendly</span>
+                    </div>
+                    <p class="text-purple-600 font-semibold text-sm my-1">Tuesday, February 11 • 5:00 PM - 6:30 PM</p>
+                    <p class="text-gray-600 mt-2">Join us for an inspiring online session dedicated to celebrating the power of women in technology! We will share stories, build confidence, and collaborate on a creative mini-project.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-gray-400 text-sm">📍 Online (Link sent upon registration)</span>
+                        <button class="bg-purple-600 text-white px-6 py-2 rounded-lg font-bold">Sign Up Free</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
